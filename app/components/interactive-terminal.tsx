@@ -13,7 +13,7 @@ export default function InteractiveTerminal() {
   const [commandInput, setCommandInput] = useState("");
   const [selectedTargetId, setSelectedTargetId] = useState<number | null>(null);
 
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Targets aligned with dashboard (completely randomized, no actual screenshot data used)
   const [targets, setTargets] = useState([
@@ -122,7 +122,9 @@ export default function InteractiveTerminal() {
   ]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+    }
   }, [screen, authStep, selectedTargetId]);
 
   const handleUsernameSubmit = (e: React.FormEvent) => {
@@ -242,7 +244,7 @@ export default function InteractiveTerminal() {
       </div>
 
       {/* Terminal Content Screen Block */}
-      <div className="p-4 sm:p-6 bg-black min-h-[420px] max-h-[500px] overflow-y-auto flex flex-col justify-between">
+      <div ref={scrollContainerRef} className="p-4 sm:p-6 bg-black min-h-[420px] max-h-[500px] overflow-y-auto flex flex-col justify-between">
         
         <div className="space-y-4">
           
@@ -585,7 +587,6 @@ export default function InteractiveTerminal() {
         </div>
 
       </div>
-      <div ref={bottomRef} />
     </div>
   );
 }

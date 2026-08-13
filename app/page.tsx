@@ -539,6 +539,9 @@ export default function Home() {
 
           <div className="text-center md:text-left leading-relaxed">
             <p>© {new Date().getFullYear()} Humanbank Security Project. Tüm hakları saklıdır.</p>
+            <p className="text-[10px] text-zinc-650 mt-1">
+              Bu web sitesi <a href="https://kodikas.org" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors font-bold underline">Kodikas</a> tarafından yapılmıştır.
+            </p>
             <p className="text-[10px] text-zinc-650 mt-1">Uygulama askeri kriptolojik standartlara bağlı kalınarak lokal siber istihbarat amaçları doğrultusunda geliştirilmiştir.</p>
           </div>
 
