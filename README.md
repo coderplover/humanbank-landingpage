@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ Humanbank - Interactive Landing Page Showcase
 
-## Getting Started
+Bu repository, local-first güvenli veri arşivleme uygulaması olan **Humanbank** için hazırlanmış, yüksek etkileşimli ve premium tasarımlı tanıtım web sitesidir (Landing Page). 
 
-First, run the development server:
+Proje; masaüstü uygulamasının CLI arayüzünü, Flask tabanlı Web Kontrol panelini ve dosya şifreleme mekanizmalarını birebir simüle eden React bileşenleri içerir.
 
+---
+
+## 🚀 Proje Özellikleri (Simülatörler)
+
+Web sitesi, uygulamanın teknik yeteneklerini ziyaretçilere doğrudan tarayıcı üzerinden deneyimletmek amacıyla şu interaktif bileşenleri sunar:
+
+1. **PowerShell CLI Simülatörü (`interactive-terminal.tsx`):**
+   - Kullanıcı girişi ve şifre doğrulama adımları (Demo için şifre: `volper`).
+   - Kayıt listeleme ve hedeflerin özet tablosu.
+   - Soyağacı ve hedef detay kartları (Kullanıcı verileri tamamen rastgele test kayıtlarından oluşmaktadır).
+
+2. **Web Command Dashboard Pre-view (`interactive-dashboard.tsx`):**
+   - Kayıtların aranabildiği siber takip grid alanı.
+   - Detaylı profil dosyası incelemesi, coğrafi radar simülasyonu ve anne-baba soyağacı ilişki grafiği (SVG Node Network).
+
+3. **Hex & Kriptoloji Analizör Laboratuvarı (`security-hex.tsx`):**
+   - Metin verilerinin şifreli JSON olarak diske yazılmasını veya görsellerin ayrı ayrı şifreli `.bin` dosyalarına dönüştürülme süreçlerini simüle eden etkileşimli panel.
+
+---
+
+## �️ Kullanılan Teknolojiler
+
+- **Framework:** Next.js 15 (App Router)
+- **Programming Language:** TypeScript
+- **Styling:** Tailwind CSS (Cyberpunk & Dark-mode temalı)
+- **Animations:** Framer Motion (Mikro-etkileşimler ve geçişler)
+- **Icons:** Lucide React
+
+---
+
+## 💻 Yerelde Çalıştırma ve Dağıtım
+
+### Kurulum
+
+İlk olarak bağımlılıkları yükleyin:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
+Ardından [http://localhost:3000](http://localhost:3000) adresinden siteyi görüntüleyebilirsiniz.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Static HTML export yapmak veya production paketini hazırlamak için:
+```bash
+npm run build
+```
 
-## Learn More
+### 🌐 Canlıya Alma (Deployment)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bu siteyi kolayca canlıya almak için aşağıdaki cloud sağlayıcılarını kullanabilirsiniz:
+- **Vercel:** Next.js projeleri için en hızlı entegrasyona sahip platformdur. Github repository'nizi bağlayarak otomatik deploy alabilirsiniz.
+- **Netlify:** Build ayarlarını değiştirerek saniyeler içinde yayına alabilirsiniz.
+- **GitHub Pages:** `out/` dizinini hedefleyen static export ayarlarını aktif edip GitHub Actions aracılığıyla host edebilirsiniz.
